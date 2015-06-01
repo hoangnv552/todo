@@ -1,0 +1,14 @@
+<h2>Task List</h2>
+<a href="#/create">Create Task</a>
+<br/>
+<div data-ng-repeat="task in tasks" class="todo-list">
+    <div class="todo">
+        <div class="checkbox">
+            <input type="checkbox" data-ng-model="task.completed" data-ng-change="changeStatus(task)">
+        </div>
+        <div class="title" data-ng-class="{ 'completed': task.completed }">
+            <a href="#/task/{{ task._id }}">{{ task.title }}</a>
+            <a data-ng-click="deleteTask(task)">Delete</a>
+        </div>
+    </div>
+</div>
